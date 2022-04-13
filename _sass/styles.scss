@@ -182,32 +182,78 @@
   }
 
 /*CSS for blog posts page*/
+$color-blue: #727fff;
+$color-black: #000;
+$color-gray: #888888;
+$color-white: #fff;
+$mobile: 320px;
+$desktop: 1024px;
 
-
-.column {
-  float: left;
-  padding: 10px;
-}
-.left{
-  width: 50% ;
-  background-image: url('Sunflower.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 50%;
-}
-
-.right {
-  width: 50%;
-  height: 50%;
-  word-spacing: 3px;
-  font-style: italic;
-  color: goldenrod;
+.center {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.label {
+  font-family: 'Quantico';
+  text-align: center;
+}
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.card-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+  @media screen and (max-width: $mobile) {
+    flex-direction: column;
+  }
+}
+
+.blog-card {
+  height: 350px;
+  width: 180px;
+  margin-left: 15px;
+  margin-right: 15px;
+    
+  .blog-card__thumbnail {
+    width: 180px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .blog-card__details {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background: $color-white;
+    box-shadow: 0 1px 7px rgba(0,0,0,0.5);
+  }
+  
+  .blog-card__title {
+    font-family: 'Quantico';
+    font-size: 8px;
+    text-transform: uppercase;
+    color: $color-black;
+  }
+  
+  .blog-card__description {
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 8px;
+    color: $color-gray;
+  }
+  
+  .blog-card__action {
+    background: transparent;
+    border: none;
+    font-family: 'Quantico';
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+    color: $color-gray;
+    cursor: pointer;
+  }
 }
